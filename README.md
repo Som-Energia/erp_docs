@@ -8,9 +8,9 @@ dodestral -m som_herencia --no-requirements
 ```
 
 ## Herència
+![Inheritance diagram](img/inheritance_methods1.png)
 ### Class Inheritance
 Per afegir/canviar el comportament a una classe. La fem servir per canviar mòduls existents a OpenERP
-
 ```bash
 class ClasseVehicle:
   _name = 'classe.vehicle'
@@ -21,7 +21,7 @@ class ClasseVehicleHeredada:
 ```
 Es pot accedir als camps i mètodes de la classe mare. No crea cap altra taula.
 
-### Inheritance by prototyping
+### Prototyping Inheritance
 Per afegir/canviar el comportament a una classe.
 ```bash
 class ClasseVehicle:
@@ -33,7 +33,7 @@ class ClasseVehicleHeredada:
 ```
 Es pot accedir als camps i mètodes de la classe mare. Crea una altra taula, copiant els camps de la classe mare a la nova taula i els registres de les dues taules són independents.
 
-### Instance inheritance
+### Delegation Inheritance
 ```bash
 class ClasseVehicle:
   _name = 'classe.vehicle'
