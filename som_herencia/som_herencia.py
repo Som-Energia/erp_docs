@@ -9,11 +9,10 @@ except:
     from ordereddict import OrderedDict
 
 class ClasseVehicle(osv.osv):
-
-    _name = 'classe.vehicle'
     '''
     Classe mare vehicle per fer proves d'herència
     '''
+    _name = 'classe.vehicle'
 
     _columns = {
         'matricula': fields.char(
