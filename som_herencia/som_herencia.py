@@ -15,14 +15,17 @@ class ClasseVehicle(osv.osv):
     _name = 'classe.vehicle'
 
     _columns = {
+        'id': fields.integer('id', readonly=True),
+        'name': fields.char(
+            "Marca del vehicle", size=20, required=False,
+            help="Marca del vehicle",),
         'matricula': fields.char(
             "Matricula", size=10, required=False, unique=True,
             help="Matricula del vehicle",),
         'data_compra': fields.date(
             "Data compra", required=True,
             help="Quin dia es va comprar",),
-        'rodes': fields.integer(
-            "Nombre de rodes", required=False,)
+        'rodes': fields.integer("Nombre de rodes", required=False,)
     }
 
     def endavant(self):
@@ -48,7 +51,11 @@ class ClasseCotxe(osv.osv):
     '''
     _name = 'classe.vehicle'
     _inherit = 'classe.vehicle'
-    
+    _columns = {
+        'portes': fields.integer(
+            "Nombre de portes")
+    }
+
     def parabrises(self):
         return "Accionem el parabrises"
 
@@ -64,7 +71,10 @@ class ClasseMoto(osv.osv):
     '''
     _name = 'classe.moto'
     _inherit = 'classe.vehicle'
-
+    _columns = {
+        'cavalls': fields.integer(
+            "Potencia en cavalls")
+    }
     
     def fercaballet(self):
         return "Fem el caballet"
@@ -82,9 +92,11 @@ class ClasseAutocar(osv.osv):
     Podem accedir als camps però no als mètodes
     '''
     _name = 'classe.autocar'
-    _inherits = OrderedDict([('classe.vehicle', 'matricula')])
+    _inherits = OrderedDict([('classe.vehicle', 'id_vehicle')])
     _columns = {
-        'matricula':fields.many2one('classe.vehicle','matricula',required=True),
+        #'matricula':fields.many2one('classe.vehicle','matricula',required=True),
+        'id_vehicle':fields.many2one('classe.vehicle','id',required=True),
+        'places': fields.integer("Nombre de places"),
     }
 
     def giraVolantEsquerra(self):
@@ -100,9 +112,11 @@ class ClasseCamio(osv.OsvInherits):
     Podem accedir als camps i als mètodes osv.OsvInherits
     '''
     _name = 'classe.camio'
-    _inherits = OrderedDict([('classe.vehicle', 'matricula')])
+    _inherits = OrderedDict([('classe.vehicle', 'id_vehicle')])
     _columns = {
-        'matricula':fields.many2one('classe.vehicle','matricula',required=True),
+        #'matricula':fields.many2one('classe.vehicle','matricula',required=True),
+        'id_vehicle':fields.many2one('classe.vehicle','id',required=True),
+        'capacitat': fields.integer("Capacitt en litres")
     }
 
     def giraVolantEsquerra(self):

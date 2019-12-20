@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+"access_classe_vehicle_r","classe.vehicle","model_classe_vehicle","som_herencia.group_som_herencia_r",1,0,0,0
+"access_classe_vehicle_u","classe.vehicle","model_classe_vehicle","som_herencia.group_som_herencia_u",1,1,1,1
+"access_classe_vehicle_w","classe.vehicle","model_classe_vehicle","som_herencia.group_som_herencia_w",1,1,1,0
+"access_classe_cotxe_r","classe.cotxe","model_classe_vehicle","som_herencia.group_som_herencia_r",1,0,0,0
+"access_classe_cotxe_u","classe.cotxe","model_classe_vehicle","som_herencia.group_som_herencia_u",1,1,1,1
+"access_classe_cotxe_w","classe.cotxe","model_classe_vehicle","som_herencia.group_som_herencia_w",1,1,1,0
+"access_classe_moto_r","classe.moto","model_classe_moto","som_herencia.group_som_herencia_r",1,0,0,0
+"access_classe_moto_u","classe.moto","model_classe_moto","som_herencia.group_som_herencia_u",1,1,1,1
+"access_classe_moto_w","classe.moto","model_classe_moto","som_herencia.group_som_herencia_w",1,1,1,0
+"access_classe_autocar_r","classe.autocar","model_classe_autocar","som_herencia.group_som_herencia_r",1,0,0,0
+"access_classe_autocar_u","classe.autocar","model_classe_autocar","som_herencia.group_som_herencia_u",1,1,1,1
+"access_classe_autocar_w","classe.autocar","model_classe_autocar","som_herencia.group_som_herencia_w",1,1,1,0
+"access_classe_camio_r","classe.camio","model_classe_camio","som_herencia.group_som_herencia_r",1,0,0,0
+"access_classe_camio_u","classe.camio","model_classe_camio","som_herencia.group_som_herencia_u",1,1,1,1
+"access_classe_camio_w","classe.camio","model_classe_camio","som_herencia.group_som_herencia_w",1,1,1,0
+

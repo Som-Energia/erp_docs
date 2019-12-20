@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+	<data noupdate="1">
+
+        <!-- Definim els grups -->
+        <record model="res.groups" id="group_som_herencia_r">
+            <field name="name">SomHerencia / ReadOnly</field>
+        </record>
+        <record model="res.groups" id="group_som_herencia_w">
+            <field name="name">SomHerencia / User</field>
+        </record>
+        <record model="res.groups" id="group_som_herencia_u">
+            <field name="name">SomHerencia / Manager</field>
+    	</record>
+
+	<!-- Exemple de registres de cada model -->
+        <record model="classe.vehicle" id="vehicle_1">
+		<field name="name">Daewo</field>
+		<field name="matricula">GI-1640-YA</field>
+		<field name="data_compra">1996-05-06</field>
+		<field name="rodes">4</field>
+        </record>
+        <record model="classe.vehicle" id="vehicle_2">
+		<field name="data_compra">1996-05-06</field>
+        </record>
+        <record model="classe.moto" id="moto_1">
+		<field name="name">Bultaco</field>
+		<field name="matricula">8640-JYC</field>
+		<field name="data_compra">2017-05-06</field>
+		<field name="rodes">2</field>
+		<field name="cavalls">30</field>
+        </record>
+        <record model="classe.autocar" id="autocar_1">
+		<field name="name">Iziar</field>
+		<field name="id_vehicle" ref="vehicle_2"/>
+		<field name="matricula">5640-LBP</field>
+		<field name="data_compra">2019-12-09</field>
+		<field name="rodes">6</field>
+		<field name="places">55</field>
+        </record>
+        <record model="classe.camio" id="camio_1">
+		<field name="id_vehicle" ref="vehicle_2"/>
+		<field name="name">Iziar</field>
+		<field name="matricula">5640-BBP</field>
+		<field name="data_compra">2002-01-29</field>
+		<field name="rodes">8</field>
+		<field name="capacitat">16000</field>
+        </record>
+    </data>
+</openerp>

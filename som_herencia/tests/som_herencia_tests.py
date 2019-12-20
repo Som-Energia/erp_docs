@@ -101,7 +101,7 @@ class VehicleTests(testing.OOTestCase):
         :return:
         """
         with Transaction().start(self.database) as txn:
-           cursor = txn.cursor
+            cursor = txn.cursor
             uid = txn.user
 
             result = self.Camio.giraVolantEsquerra()
