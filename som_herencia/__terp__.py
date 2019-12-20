@@ -11,7 +11,9 @@
         "base",
     ],
     "init_xml": [],
-    "demo_xml": [],
+    "demo_xml": [
+        "tests/som_herencia_demo.xml"
+    ],
     "update_xml":[
         "som_herencia_data.xml",
         "security/ir.model.access.csv",

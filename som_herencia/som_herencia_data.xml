@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
-	<data noupdate="1">
-
+    <data noupdate="1">
         <!-- Definim els grups -->
         <record model="res.groups" id="group_som_herencia_r">
             <field name="name">SomHerencia / ReadOnly</field>
@@ -45,6 +44,14 @@
 		<field name="data_compra">2002-01-29</field>
 		<field name="rodes">8</field>
 		<field name="capacitat">16000</field>
+	</record>
+	<record model="classe.camio" id="camio_2">
+		<!-- Si s'omet la FK id_vehicle, es crea automaticament registre a classe.vehicle -->
+		<field name="name">MAN</field>
+		<field name="matricula">4580-FBP</field>
+		<field name="data_compra">2013-01-29</field>
+		<field name="rodes">8</field>
+		<field name="capacitat">13000</field>
         </record>
     </data>
 </openerp>

@@ -37,6 +37,9 @@ class ClasseVehicle(osv.osv):
     def giraesquerra(self):
         return "El vehicle gira a l'esquerra"
 
+    def giraDreta(self):
+        return "El vehicle gira a la dreta"
+
     def ferhotot(self):
         return str(self.endavant() + "->" +
         self.endarrere() + "->" +
@@ -47,7 +50,7 @@ ClasseVehicle()
 class ClasseCotxe(osv.osv):
     '''
     Class Inheritance
-    Classe filla herència classica. Afegim comportament.
+    Classe filla herència classica. La fem servir per afegir comportament a un model existent, sense crear cap model nou. Coneguts com a mòduls "Custom".
     '''
     _name = 'classe.vehicle'
     _inherit = 'classe.vehicle'
@@ -56,9 +59,11 @@ class ClasseCotxe(osv.osv):
             "Nombre de portes")
     }
 
+    # Serà accessible des de tots els Vehicles
     def parabrises(self):
         return "Accionem el parabrises"
 
+    # Serà accessible des de tots els Vehicles
     def giraVolantEsquerra(self):
         return str("Gira el volant a l'esquerra -> " + self.giraesquerra())
 
@@ -76,11 +81,18 @@ class ClasseMoto(osv.osv):
             "Potencia en cavalls")
     }
     
-    def fercaballet(self):
-        return "Fem el caballet"
+    #Accedim a un camp del registre actual
+    def fercaballet(self, cursor, uid, id):
+        moto = self.browse(cursor, uid, id)
+        return "Fem el caballet perque tenim molts cavalls -> " + str(moto.cavalls)
 
+    #Es pot accedir als mètodes mare amb self.
     def genollesquerra(self):
         return str(self.giraesquerra() + "-> genoll esquerra a terra")
+
+    #Es pot accedir als mètodes mare mitjançant super. Això permet reescriure comportament i cridar al mètode mare.
+    def endarrere(self):
+        return str(super(ClasseMoto, self).endarrere() + " -> Un moment, la moto no pot anar endarrere!")
 
 ClasseMoto()
 
@@ -94,11 +106,19 @@ class ClasseAutocar(osv.osv):
     _name = 'classe.autocar'
     _inherits = OrderedDict([('classe.vehicle', 'id_vehicle')])
     _columns = {
-        #'matricula':fields.many2one('classe.vehicle','matricula',required=True),
         'id_vehicle':fields.many2one('classe.vehicle','id',required=True),
         'places': fields.integer("Nombre de places"),
     }
 
+    def quantesPortesTinc(self, cr, uid, id):
+        autocar = self.browse(cr, uid, id)
+        return "Tinc " + str(autocar.portes) + " portes."
+
+    #No es pot accedir als mètodes mare amb self.
+    def obreMaleter(self):
+        return str(self.giraDreta() + " -> Obre Maleter")
+
+    #No es pot accedir als mètodes mare mitjançant super. Això fa que no es pot reescriure comportament i a la vegada cridar al mètode mare.
     def giraVolantEsquerra(self):
         return str("Gira el volant de l'Autocar a l'esquerra -> " + super(ClasseAutocar, self).giraesquerra())
 
@@ -114,12 +134,16 @@ class ClasseCamio(osv.OsvInherits):
     _name = 'classe.camio'
     _inherits = OrderedDict([('classe.vehicle', 'id_vehicle')])
     _columns = {
-        #'matricula':fields.many2one('classe.vehicle','matricula',required=True),
         'id_vehicle':fields.many2one('classe.vehicle','id',required=True),
         'capacitat': fields.integer("Capacitt en litres")
     }
 
+    #Es pot accedir als mètodes mare amb self.
     def giraVolantEsquerra(self):
         return str("Gira el volant del Camió a l'esquerra -> " + self.giraesquerra())
+
+    #No es pot accedir als mètodes mare mitjançant super. Això fa que no es pot reescriure comportament i a la vegada cridar al mètode mare.
+    def giraDreta(self):
+        return str("Camio -> " + super(ClasseCamio, self).giraDreta())
 
 ClasseCamio()

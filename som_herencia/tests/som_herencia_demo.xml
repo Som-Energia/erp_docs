@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+	<!-- Exemple de registres de cada model -->
+        <record model="classe.vehicle" id="demo_vehicle_1">
+		<field name="name">Tata</field>
+		<field name="matricula">T-9324-AV</field>
+		<field name="data_compra">1983-06-17</field>
+		<field name="rodes">4</field>
+        </record>
+        <record model="classe.vehicle" id="demo_vehicle_2">
+		<field name="data_compra">1986-06-27</field>
+        </record>
+        <record model="classe.moto" id="demo_moto_1">
+		<field name="name">Vespa</field>
+		<field name="matricula">1968-LSD</field>
+		<field name="data_compra">2019-05-06</field>
+		<field name="rodes">2</field>
+		<field name="cavalls">30</field>
+        </record>
+        <record model="classe.autocar" id="demo_autocar_1">
+		<field name="name">Bhushan</field>
+		<field name="id_vehicle" ref="vehicle_2"/>
+		<field name="matricula">1971-FTP</field>
+		<field name="data_compra">1971-04-16</field>
+		<field name="rodes">6</field>
+		<field name="places">55</field>
+		<field name="portes">3</field>
+        </record>
+        <record model="classe.camio" id="demo_camio_1">
+		<field name="id_vehicle" ref="demo_vehicle_2"/>
+		<field name="name">Feinler</field>
+		<field name="matricula">5640-DNS</field>
+		<field name="data_compra">1983-11-19</field>
+		<field name="rodes">8</field>
+		<field name="capacitat">16000</field>
+	</record>
+	<record model="classe.camio" id="demo_camio_2">
+		<!-- Si s'omet la FK id_vehicle, es crea automaticament registre a classe.vehicle -->
+		<field name="name">Ylonen</field>
+		<field name="matricula">1995-SSH</field>
+		<field name="data_compra">1995-07-15</field>
+		<field name="rodes">8</field>
+		<field name="capacitat">13000</field>
+        </record>
+    </data>
+</openerp>
