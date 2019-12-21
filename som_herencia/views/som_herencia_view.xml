@@ -55,6 +55,7 @@
                     <field name="data_compra"/>
                     <field name="rodes"/>
                     <field name="portes"/>
+                    <field name="cavalls"/>
                 </form>
             </field>
         </record>
@@ -70,6 +71,7 @@
                     <field name="data_compra" select="1"/>
                     <field name="rodes"/>
                     <field name="portes"/>
+                    <field name="cavalls"/>
                 </tree>
             </field>
         </record>
@@ -95,6 +97,7 @@
                     <field name="data_compra"/>
                     <field name="rodes"/>
                     <field name="portes"/>
+                    <field name="places"/>
                 </form>
             </field>
         </record>
@@ -110,6 +113,7 @@
                     <field name="data_compra" select="1"/>
                     <field name="rodes"/>
                     <field name="portes"/>
+                    <field name="places"/>
                 </tree>
             </field>
         </record>
@@ -128,13 +132,14 @@
             <field name="model">classe.camio</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="camios">
+                <form string="Camions">
                     <field name="name"/>
 		    <!-- Aquest camp serà readonly sempre -->
                     <field name="matricula" readonly="1"/>
                     <field name="data_compra"/>
                     <field name="rodes"/>
                     <field name="portes"/>
+                    <field name="capacitat"/>
                 </form>
             </field>
         </record>
@@ -143,13 +148,14 @@
             <field name="model">classe.camio</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-	        <tree string="Vehicles">
+	        <tree string="Camions">
 		    <!-- Els que tenen el camp select, es podran filtrar -->
                     <field name="name" select="1"/>
                     <field name="matricula"/>
                     <field name="data_compra" select="1"/>
                     <field name="rodes"/>
                     <field name="portes"/>
+                    <field name="capacitat"/>
                 </tree>
             </field>
         </record>
