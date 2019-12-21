@@ -12,11 +12,12 @@
     ],
     "init_xml": [],
     "demo_xml": [
-        "tests/som_herencia_demo.xml"
+        "demo/som_herencia_demo.xml"
     ],
     "update_xml":[
         "som_herencia_data.xml",
         "security/ir.model.access.csv",
+        "views/som_herencia_view.xml",
     ],
     "active": False,
     "installable": True

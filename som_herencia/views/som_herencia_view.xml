@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- Vistes dels Vehicles -->
+        <record model="ir.ui.view" id="view_vehicle_form">
+            <field name="name">classe.vehicle.form</field>
+            <field name="model">classe.vehicle</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Vehicles">
+                    <field name="name"/>
+		    <!-- Aquest camp serà readonly sempre -->
+                    <field name="matricula" readonly="1"/>
+                    <field name="data_compra"/>
+                    <field name="rodes"/>
+                    <field name="portes"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_vehicle_tree">
+            <field name="name">classe.vehicle.tree</field>
+            <field name="model">classe.vehicle</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+	        <tree string="Vehicles">
+		    <!-- Els que tenen el camp select, es podran filtrar -->
+                    <field name="name" select="1"/>
+                    <field name="matricula"/>
+                    <field name="data_compra" select="1"/>
+                    <field name="rodes"/>
+                    <field name="portes"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_vehicle_tree" model="ir.actions.act_window">
+            <field name="name">Llista de vehicles</field>
+            <field name="res_model">classe.vehicle</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_vehicle_tree"/>
+    	</record>
+	<menuitem id="menu_som_herencia_base" name="Som Herencia" />
+    <menuitem action="action_vehicle_tree" id="menu_vehicle_tree" parent="som_herencia.menu_som_herencia_base"/>
+
+        <!-- Vistes de les Motos -->
+        <record model="ir.ui.view" id="view_moto_form">
+            <field name="name">classe.moto.form</field>
+            <field name="model">classe.moto</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Motos">
+                    <field name="name"/>
+		    <!-- Aquest camp serà readonly sempre -->
+                    <field name="matricula" readonly="1"/>
+                    <field name="data_compra"/>
+                    <field name="rodes"/>
+                    <field name="portes"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_moto_tree">
+            <field name="name">classe.moto.tree</field>
+            <field name="model">classe.moto</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+	        <tree string="Vehicles">
+		    <!-- Els que tenen el camp select, es podran filtrar -->
+                    <field name="name" select="1"/>
+                    <field name="matricula"/>
+                    <field name="data_compra" select="1"/>
+                    <field name="rodes"/>
+                    <field name="portes"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_moto_tree" model="ir.actions.act_window">
+            <field name="name">Llista de motos</field>
+            <field name="res_model">classe.moto</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_moto_tree"/>
+    	</record>
+    <menuitem action="action_moto_tree" id="menu_moto_tree" parent="som_herencia.menu_som_herencia_base"/>
+
+        <!-- Vistes de les autocars -->
+        <record model="ir.ui.view" id="view_autocar_form">
+            <field name="name">classe.autocar.form</field>
+            <field name="model">classe.autocar</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="autocars">
+                    <field name="name"/>
+		    <!-- Aquest camp serà readonly sempre -->
+                    <field name="matricula" readonly="1"/>
+                    <field name="data_compra"/>
+                    <field name="rodes"/>
+                    <field name="portes"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_autocar_tree">
+            <field name="name">classe.autocar.tree</field>
+            <field name="model">classe.autocar</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+	        <tree string="Vehicles">
+		    <!-- Els que tenen el camp select, es podran filtrar -->
+                    <field name="name" select="1"/>
+                    <field name="matricula"/>
+                    <field name="data_compra" select="1"/>
+                    <field name="rodes"/>
+                    <field name="portes"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_autocar_tree" model="ir.actions.act_window">
+            <field name="name">Llista de autocars</field>
+            <field name="res_model">classe.autocar</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_autocar_tree"/>
+    	</record>
+    <menuitem action="action_autocar_tree" id="menu_autocar_tree" parent="som_herencia.menu_som_herencia_base"/>
+
+        <!-- Vistes de les camios -->
+        <record model="ir.ui.view" id="view_camio_form">
+            <field name="name">classe.camio.form</field>
+            <field name="model">classe.camio</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="camios">
+                    <field name="name"/>
+		    <!-- Aquest camp serà readonly sempre -->
+                    <field name="matricula" readonly="1"/>
+                    <field name="data_compra"/>
+                    <field name="rodes"/>
+                    <field name="portes"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_camio_tree">
+            <field name="name">classe.camio.tree</field>
+            <field name="model">classe.camio</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+	        <tree string="Vehicles">
+		    <!-- Els que tenen el camp select, es podran filtrar -->
+                    <field name="name" select="1"/>
+                    <field name="matricula"/>
+                    <field name="data_compra" select="1"/>
+                    <field name="rodes"/>
+                    <field name="portes"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_camio_tree" model="ir.actions.act_window">
+            <field name="name">Llista de camios</field>
+            <field name="res_model">classe.camio</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_camio_tree"/>
+    	</record>
+    <menuitem action="action_camio_tree" id="menu_camio_tree" parent="som_herencia.menu_som_herencia_base"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+        <!-- No sempre cal crear grups, depen de qui hagi d'accedir als nous models -->
+        <record model="res.groups" id="group_som_herencia_r">
+            <field name="name">SomHerencia / ReadOnly</field>
+        </record>
+        <record model="res.groups" id="group_som_herencia_w">
+            <field name="name">SomHerencia / User</field>
+        </record>
+        <record model="res.groups" id="group_som_herencia_u">
+            <field name="name">SomHerencia / Manager</field>
+    	</record>
+    </data>
+</openerp>

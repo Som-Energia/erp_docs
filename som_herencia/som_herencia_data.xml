@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
     <data noupdate="1">
-        <!-- Definim els grups -->
-        <record model="res.groups" id="group_som_herencia_r">
-            <field name="name">SomHerencia / ReadOnly</field>
-        </record>
-        <record model="res.groups" id="group_som_herencia_w">
-            <field name="name">SomHerencia / User</field>
-        </record>
-        <record model="res.groups" id="group_som_herencia_u">
-            <field name="name">SomHerencia / Manager</field>
-    	</record>
-
 	<!-- Exemple de registres de cada model -->
         <record model="classe.vehicle" id="vehicle_1">
 		<field name="name">Daewo</field>
