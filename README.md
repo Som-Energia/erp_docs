@@ -63,4 +63,4 @@ https://openerp-server.readthedocs.io/en/latest/03_module_dev_02.html?highlight=
 
 ## Model de dades
 Per veure el model de dades que es crea podeu veure com queden les taules quan es carreguen les dades de demo
-[Model de dades demo](demo/README.md)
+*  [Model de dades demo](som_herencia/demo/README.md)
