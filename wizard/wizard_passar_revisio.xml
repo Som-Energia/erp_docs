@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <!--<record model="ir.ui.view" id="view_wizard_add_contracts_lot_form">-->
+            <!--<field name="name">wizard.infoenergia.add.contracts.lot.form</field>-->
+            <!--<field name="model">wizard.infoenergia.add.contracts.lot</field>-->
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Seleccionar pòlisses per afegir al lot d'enviament">
+                    <!--<button name="passar_revisio" type="object" icon="gtk-ok" string="Afegeix"/>-->
+                </form>
+            </field>
+        </record>
+        <!--<record model="ir.actions.act_window" id="action_wizard_add_contracts_lot">-->
+            <!--<field name="name">Seleccionar pòlisses per afegir al lot</field>-->
+            <field name="type">ir.actions.act_window</field>
+            <!--<field name="res_model">wizard.infoenergia.add.contracts.lot</field>-->
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <!--<field name="view_id" ref="view_wizard_add_contracts_lot_form"/>-->
+        </record>
+        <!--<record id="values_infoenergia_add_contracts_lot_form" model="ir.values">-->
+            <field name="object" eval="1"/>
+           <!-- <field name="name">Seleccionar pòlisses per afegir al lot</field>-->
+            <field name="key2">client_action_multi</field>
+            <field name="key">action</field>
+            <!--<field name="model">som.infoenergia.lot.enviament</field>-->
+            <!--<field name="value" eval="'ir.actions.act_window,'+str(ref('action_wizard_add_contracts_lot'))"/>-->
+        </record>
+    </data>
+</openerp>

@@ -19,6 +19,7 @@
         "som_herencia_data.xml",
         "security/ir.model.access.csv",
         "views/som_herencia_view.xml",
+        "wizard/wizard_passar_revisio.xml",
     ],
     "active": False,
     "installable": True
