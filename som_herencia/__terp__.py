@@ -4,7 +4,7 @@
     "description": """
     This module provide documentacion about inheritance
     """,
-    "version": "0-dev",
+    "version": "0.1",
     "author": "SomEnergia",
     "category": "SomEnergia",
     "depends":[
