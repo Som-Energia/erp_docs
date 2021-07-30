@@ -7,9 +7,11 @@
 		<field name="matricula">GI-1640-YA</field>
 		<field name="data_compra">1996-05-06</field>
 		<field name="rodes">4</field>
+		<field name="data_revisio">1999-09-9</field>
         </record>
         <record model="classe.vehicle" id="vehicle_2">
 		<field name="data_compra">1996-05-06</field>
+		<field name="data_revisio">1999-09-9</field>
         </record>
         <record model="classe.moto" id="moto_1">
 		<field name="name">Bultaco</field>
@@ -17,6 +19,7 @@
 		<field name="data_compra">2017-05-06</field>
 		<field name="rodes">2</field>
 		<field name="cavalls">30</field>
+		<field name="data_revisio">2018-05-6</field>
         </record>
         <record model="classe.autocar" id="autocar_1">
 		<field name="name">Iziar</field>
@@ -25,6 +28,7 @@
 		<field name="data_compra">2019-12-09</field>
 		<field name="rodes">6</field>
 		<field name="places">55</field>
+		<field name="data_revisio">2020-05-6</field>
         </record>
         <record model="classe.camio" id="camio_1">
 		<field name="id_vehicle" ref="vehicle_2"/>
@@ -33,6 +37,7 @@
 		<field name="data_compra">2002-01-29</field>
 		<field name="rodes">8</field>
 		<field name="capacitat">16000</field>
+		<field name="data_revisio">2018-05-6</field>
 	</record>
 	<record model="classe.camio" id="camio_2">
 		<!-- Si s'omet la FK id_vehicle, es crea automaticament registre a classe.vehicle -->
@@ -41,6 +46,7 @@
 		<field name="data_compra">2013-01-29</field>
 		<field name="rodes">8</field>
 		<field name="capacitat">13000</field>
+		<field name="data_revisio">2018-05-6</field>
         </record>
     </data>
 </openerp>

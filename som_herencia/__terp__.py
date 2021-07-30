@@ -15,6 +15,7 @@
         "demo/som_herencia_demo.xml"
     ],
     "update_xml":[
+        "security/som_herencia_security.xml",
         "som_herencia_data.xml",
         "security/ir.model.access.csv",
         "views/som_herencia_view.xml",

@@ -2,6 +2,7 @@
 from osv import osv, fields
 from tools.translate import _
 from tools import config
+from datetime import datetime
 import netsvc
 try:
     from collections import OrderedDict
@@ -25,7 +26,10 @@ class ClasseVehicle(osv.osv):
         'data_compra': fields.date(
             "Data compra", required=True,
             help="Quin dia es va comprar",),
-        'rodes': fields.integer("Nombre de rodes", required=False,)
+        'rodes': fields.integer("Nombre de rodes", required=False,),
+        'data_revisio': fields.date(
+                       "Data revisió", required=False,
+                        help = "Quin dia es va fer la ultima revisio",)
     }
 
     def endavant(self):
@@ -45,12 +49,23 @@ class ClasseVehicle(osv.osv):
         self.endarrere() + "->" +
         self.giraesquerra())
 
+    def passarRevisio(self,cursor,uid,id):
+        vehicle = self.browse(cursor,uid,id)
+        today=datetime.today()
+        vehicle.write({'data_revisio': today.strftime("%Y-%m-%d")})
+        return "Revisio passada el " + str(vehicle.data_revisio)
+
+    def parabrises(self):
+        return "Accionem el parabrises"
+
+
 ClasseVehicle()
 
 class ClasseCotxe(osv.osv):
     '''
     Class Inheritance
-    Classe filla herència classica. La fem servir per afegir comportament a un model existent, sense crear cap model nou. Coneguts com a mòduls "Custom".
+    Classe filla herència classica. La fem servir per afegir comportament a un model existent, sense crear cap model nou. 
+    Coneguts com a mòduls "Custom".
     '''
     _name = 'classe.vehicle'
     _inherit = 'classe.vehicle'
