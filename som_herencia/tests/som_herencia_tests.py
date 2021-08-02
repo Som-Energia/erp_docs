@@ -5,6 +5,7 @@ from destral.patch import PatchNewCursors
 import netsvc
 import time
 import random
+from datetime import datetime
 
 class VehicleTests(testing.OOTestCase):
     def setUp(self):
@@ -20,6 +21,25 @@ class VehicleTests(testing.OOTestCase):
         #self.txn.stop()
         pass
 
+    def test__passarRevisio_Vehicle(self):
+
+        with Transaction().start(self.database) as txn:
+            cursor = txn.cursor
+            uid = txn.user
+
+            vehicle_id = self.Data.get_object_reference(
+                        cursor, uid, 'som_herencia', 'demo_vehicle_1'
+                        )[1]
+            result = self.Vehicle.passarRevisio(cursor, uid, vehicle_id,False)
+            vehicle = self.Vehicle.browse(cursor, uid, vehicle_id)
+
+            strAvui = str(datetime.today().strftime("%Y-%m-%d"))
+            self.assertEquals(
+                result,
+                "Revisio passada el " + strAvui
+            )
+            self.assertEquals(vehicle.data_revisio, strAvui )
+
     def test__ferHoTot_Vehicle(self):
         """
         Checks if when state changed, everithing works
@@ -31,7 +51,10 @@ class VehicleTests(testing.OOTestCase):
 
             result = self.Vehicle.ferhotot()
 
-            self.assertEquals(result, "El vehicle va endavant->El vehicle va endarrere->El vehicle gira a l'esquerra") 
+            self.assertEquals(
+                result,
+                "El vehicle va endavant->El vehicle va endarrere->El vehicle gira a l'esquerra"
+            )
 
     def test__giraVolantEsquerra__Cotxe(self): 
         """
