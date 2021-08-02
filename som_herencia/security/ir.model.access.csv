@@ -14,4 +14,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 "access_classe_camio_r","classe.camio","model_classe_camio","som_herencia.group_som_herencia_r",1,0,0,0
 "access_classe_camio_u","classe.camio","model_classe_camio","som_herencia.group_som_herencia_u",1,1,1,1
 "access_classe_camio_w","classe.camio","model_classe_camio","som_herencia.group_som_herencia_w",1,1,1,0
-
+"access_wizard_passar_revisio_r","wizard.passar.revisio","model_wizard_passar_revisio","som_herencia.group_som_herencia_r",1,0,0,0
+"access_wizard_passar_revisio_u","wizard.passar.revisio","model_wizard_passar_revisio","som_herencia.group_som_herencia_u",1,1,1,1
+"access_wizard_passar_revisio_w","wizard.passar.revisio","model_wizard_passar_revisio","som_herencia.group_som_herencia_w",1,1,1,0

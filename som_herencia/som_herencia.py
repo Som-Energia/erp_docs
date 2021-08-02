@@ -49,11 +49,14 @@ class ClasseVehicle(osv.osv):
         self.endarrere() + "->" +
         self.giraesquerra())
 
-    def passarRevisio(self,cursor,uid,id):
+    def passarRevisio(self,cursor,uid,id,data, context=None):
         vehicle = self.browse(cursor,uid,id)
-        today=datetime.today()
-        vehicle.write({'data_revisio': today.strftime("%Y-%m-%d")})
-        return "Revisio passada el " + str(vehicle.data_revisio)
+        dataNova = data
+        if not dataNova:
+            today=datetime.today()
+            dataNova = today.strftime("%Y-%m-%d")
+        vehicle.write({'data_revisio': dataNova})
+        return "Revisio passada el " + str(dataNova)
 
     def parabrises(self):
         return "Accionem el parabrises"

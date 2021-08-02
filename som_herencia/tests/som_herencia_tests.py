@@ -30,7 +30,7 @@ class VehicleTests(testing.OOTestCase):
             vehicle_id = self.Data.get_object_reference(
                         cursor, uid, 'som_herencia', 'demo_vehicle_1'
                         )[1]
-            result = self.Vehicle.passarRevisio(cursor, uid, vehicle_id)
+            result = self.Vehicle.passarRevisio(cursor, uid, vehicle_id,False)
             vehicle = self.Vehicle.browse(cursor, uid, vehicle_id)
 
             strAvui = str(datetime.today().strftime("%Y-%m-%d"))
