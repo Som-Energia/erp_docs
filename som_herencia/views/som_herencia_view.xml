@@ -168,7 +168,7 @@
             </field>
         </record>
         <record id="action_camio_tree" model="ir.actions.act_window">
-            <field name="name">Llista de camios</field>
+            <field name="name">Llista de camions</field>
             <field name="res_model">classe.camio</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
