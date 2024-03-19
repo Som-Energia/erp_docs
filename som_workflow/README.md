@@ -81,6 +81,7 @@ Per exemple, podem fer un camp `required` o `readonly` depenent de l'estat.
 
 ## Graf d'estats de l'exemple
 
+![formaci-workflows-presentacions-de-google (1)](https://github.com/Som-Energia/erp_docs/assets/66311413/245fa59d-1917-4d87-8961-90fe15c6ec76)
 
 
 ## Més informació
