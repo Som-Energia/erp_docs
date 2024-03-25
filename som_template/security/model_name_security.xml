@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+    <record id="user_group" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="category"/>
+        <field name="comment">
+            Per agrupar permisos de lectura d'uns models
+        </field>
+    </record>
+
+    <record id="manager_group" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="category"/>
+        <field name="implied_ids" eval="[(4, ref('user_group'))]"/>
+        <field name="comment">
+            Per agrupar permisos d'escriptura d'uns models
+        </field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+</openerp>
