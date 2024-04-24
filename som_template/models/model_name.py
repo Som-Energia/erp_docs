@@ -11,16 +11,14 @@ class ModelName(osv.osv):
         'active': fields.boolean('Active'),
         'create_uid': fields.many2one('res.users', 'Usuari creador', readonly=1, select=2),
         'partner_id': fields.many2one('res.partner', 'Partner',
-                                      select=True,
-                                      change_default=True,
-                                      readonly=True,
-                                      required=True,
-                                      states={'draft': [('readonly', False)]}),
+                                      select=True, change_default=True, readonly=True,
+                                      required=True, states={'draft': [('readonly', False)]}),
 
     _order = "id desc"
 
     _defaults = {
-        'active': lambda *a : True,
-        }
+        'active': lambda *a: True,
+    }
+
 
 ModelName()
