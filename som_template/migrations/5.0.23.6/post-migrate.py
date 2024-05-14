@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 import logging
 import pooler
-from oopgrade.oopgrade import load_data, load_data_records
+from oopgrade.oopgrade import load_data, load_data_records, load_access_rules_from_model_name
 
 
 def up(cursor, installed_version):
@@ -36,6 +36,16 @@ def up(cursor, installed_version):
         cursor, 'giscedata_atc', 'wizard/wizard_retipificar_atc.xml', list_of_records, mode='update'
     )
     logger.info("XMLs succesfully updated.")
+
+    # Actualitzar persmisos
+    logger.info("Updating Permissions")
+    models = [
+        "model_report_backend_invoice_email"
+    ]
+    load_access_rules_from_model_name(
+        cursor, 'som_facturacio_comer', models
+    )
+    logger.info("Permissions succesfully updated.")
 
 
 def down(cursor, installed_version):
