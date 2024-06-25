@@ -11,16 +11,16 @@
     'active': False,
     'installable': True,
     'depends': [
-        'base',
+        'base_extended_som',
     ],
     'init_xml': [],
     'update_xml': [
-        'security/some_model_security.xml',
-        'security/ir.model.access.csv',
         'views/assets.xml',
         'views/report_name.xml',
         'views/res_partner_view.xml',
         'wizard/wizard_model_view.xml',
+        'security/some_model_security.xml',
+        'security/ir.model.access.csv',
     ],
     'demo_xml': [
         'demo/res_partner_demo.xml',
